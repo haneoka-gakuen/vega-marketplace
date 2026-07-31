@@ -1,0 +1,57 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: vega-marketplace-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out marketplace
+        uses: actions/checkout@v7
+        with:
+          path: vega-marketplace
+
+      - name: Check out Vega
+        uses: actions/checkout@v7
+        with:
+          repository: haneoka-gakuen/vega
+          path: vega-marketplace/.dependencies/vega
+
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 11.14.0
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 20
+          cache: pnpm
+          cache-dependency-path: vega-marketplace/pnpm-lock.yaml
+
+      - name: Install dependencies
+        working-directory: vega-marketplace
+        run: pnpm install --frozen-lockfile
+
+      - name: Build protocol and Vega
+        working-directory: vega-marketplace
+        run: |
+          pnpm --filter @haneoka/vega-protocol build
+          pnpm --filter @haneoka/vega build:core
+
+      - name: Check marketplace
+        working-directory: vega-marketplace
+        run: pnpm check
+
+      - name: Inspect package
+        working-directory: vega-marketplace
+        run: pnpm pack --dry-run

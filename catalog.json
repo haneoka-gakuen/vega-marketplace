@@ -1,0 +1,682 @@
+{
+  "format": "vega-plugin-catalog",
+  "formatVersion": 1,
+  "id": "haneoka.official",
+  "plugins": [
+    {
+      "format": "vega-plugin-entry",
+      "formatVersion": 1,
+      "id": "haneoka.altair-adv",
+      "name": "ADV Authoring",
+      "version": "0.1.0",
+      "apiVersion": 2,
+      "description": "Native 0–100 ADV commands, validation, compilation and JSON format",
+      "publisher": "Haneoka Gakuen",
+      "tags": ["adv", "authoring", "official"],
+      "capabilities": ["assets", "commands", "compiler", "diagnostics", "format", "services"],
+      "targets": {
+        "runtimes": ["altair"],
+        "platforms": ["android", "electron", "ios", "pwa", "tauri", "web"],
+        "apiVersions": [2]
+      },
+      "source": {
+        "type": "registry",
+        "package": "@haneoka/altair-plugin-adv"
+      }
+    },
+    {
+      "format": "vega-plugin-entry",
+      "formatVersion": 1,
+      "id": "haneoka.altair-bestdori",
+      "name": "Bestdori Authoring",
+      "version": "0.1.0",
+      "apiVersion": 2,
+      "description": "Bestdori story import, resource browsing and compatibility diagnostics for Altair",
+      "publisher": "Haneoka Gakuen",
+      "tags": ["authoring", "bestdori", "converter", "official"],
+      "capabilities": ["assets", "diagnostics", "format", "services"],
+      "permissions": ["network:http"],
+      "dependencies": {
+        "haneoka.altair-adv": "^0.1.0"
+      },
+      "targets": {
+        "runtimes": ["altair"],
+        "platforms": ["android", "electron", "ios", "pwa", "tauri", "web"],
+        "apiVersions": [2]
+      },
+      "source": {
+        "type": "registry",
+        "package": "@haneoka/altair-plugin-bestdori"
+      }
+    },
+    {
+      "format": "vega-plugin-entry",
+      "formatVersion": 1,
+      "id": "haneoka.altair-drafts",
+      "name": "Draft Sessions",
+      "version": "0.1.0",
+      "apiVersion": 2,
+      "description": "Bounded source-draft and conflict coordination service",
+      "publisher": "Haneoka Gakuen",
+      "tags": ["authoring", "drafts", "official"],
+      "capabilities": ["services"],
+      "targets": {
+        "runtimes": ["altair"],
+        "platforms": ["android", "electron", "ios", "pwa", "tauri", "web"],
+        "apiVersions": [2]
+      },
+      "source": {
+        "type": "registry",
+        "package": "@haneoka/altair-plugin-drafts"
+      }
+    },
+    {
+      "format": "vega-plugin-entry",
+      "formatVersion": 1,
+      "id": "haneoka.altair-flow",
+      "name": "Story Flow",
+      "version": "0.1.0",
+      "apiVersion": 2,
+      "description": "Canonical control-flow analysis for Altair projects",
+      "publisher": "Haneoka Gakuen",
+      "tags": ["authoring", "flow", "official"],
+      "capabilities": ["flow"],
+      "targets": {
+        "runtimes": ["altair"],
+        "platforms": ["android", "electron", "ios", "pwa", "tauri", "web"],
+        "apiVersions": [2]
+      },
+      "source": {
+        "type": "registry",
+        "package": "@haneoka/altair-plugin-flow"
+      }
+    },
+    {
+      "format": "vega-plugin-entry",
+      "formatVersion": 1,
+      "id": "haneoka.altair-haneoka",
+      "name": "Haneoka Authoring",
+      "version": "0.1.0",
+      "apiVersion": 2,
+      "description": "Haneoka catalogue browsing, previews and canonical story import for Altair",
+      "publisher": "Haneoka Gakuen",
+      "tags": ["assets", "authoring", "haneoka", "official"],
+      "capabilities": ["assets", "services"],
+      "permissions": ["network:http"],
+      "dependencies": {
+        "haneoka.altair-adv": "^0.1.0"
+      },
+      "targets": {
+        "runtimes": ["altair"],
+        "platforms": ["android", "electron", "ios", "pwa", "tauri", "web"],
+        "apiVersions": [2]
+      },
+      "source": {
+        "type": "registry",
+        "package": "@haneoka/altair-plugin-haneoka"
+      }
+    },
+    {
+      "format": "vega-plugin-entry",
+      "formatVersion": 1,
+      "id": "haneoka.altair-history",
+      "name": "History",
+      "version": "0.1.0",
+      "apiVersion": 2,
+      "description": "Bounded undo and redo history for editor snapshots",
+      "publisher": "Haneoka Gakuen",
+      "tags": ["authoring", "history", "official", "undo"],
+      "capabilities": ["services"],
+      "targets": {
+        "runtimes": ["altair"],
+        "platforms": ["android", "electron", "ios", "pwa", "tauri", "web"],
+        "apiVersions": [2]
+      },
+      "source": {
+        "type": "registry",
+        "package": "@haneoka/altair-plugin-history"
+      }
+    },
+    {
+      "format": "vega-plugin-entry",
+      "formatVersion": 1,
+      "id": "haneoka.altair-marketplace",
+      "name": "Extension Marketplace",
+      "version": "0.1.0",
+      "apiVersion": 2,
+      "description": "Metadata-only catalog, permission and project extension management",
+      "publisher": "Haneoka Gakuen",
+      "tags": ["authoring", "marketplace", "official"],
+      "capabilities": ["services"],
+      "permissions": ["network:http"],
+      "targets": {
+        "runtimes": ["altair"],
+        "platforms": ["android", "electron", "ios", "pwa", "tauri", "web"],
+        "apiVersions": [2]
+      },
+      "source": {
+        "type": "registry",
+        "package": "@haneoka/altair-plugin-marketplace"
+      }
+    },
+    {
+      "format": "vega-plugin-entry",
+      "formatVersion": 1,
+      "id": "haneoka.altair-prose",
+      "name": "Prose Adaptation",
+      "version": "0.1.0",
+      "apiVersion": 2,
+      "description": "Deterministic review-required prose adaptation provider",
+      "publisher": "Haneoka Gakuen",
+      "tags": ["ai", "authoring", "official", "prose"],
+      "capabilities": ["ai"],
+      "targets": {
+        "runtimes": ["altair"],
+        "platforms": ["android", "electron", "ios", "pwa", "tauri", "web"],
+        "apiVersions": [2]
+      },
+      "source": {
+        "type": "registry",
+        "package": "@haneoka/altair-plugin-prose"
+      }
+    },
+    {
+      "format": "vega-plugin-entry",
+      "formatVersion": 1,
+      "id": "haneoka.altair-vega-preview",
+      "name": "Vega Preview",
+      "version": "0.1.0",
+      "apiVersion": 2,
+      "description": "Vega project compiler and lifecycle-scoped live preview",
+      "publisher": "Haneoka Gakuen",
+      "tags": ["authoring", "official", "preview", "vega"],
+      "capabilities": ["compiler", "preview", "services"],
+      "dependencies": {
+        "haneoka.altair-adv": "^0.1.0"
+      },
+      "targets": {
+        "runtimes": ["altair"],
+        "platforms": ["android", "electron", "ios", "pwa", "tauri", "web"],
+        "apiVersions": [2]
+      },
+      "source": {
+        "type": "registry",
+        "package": "@haneoka/altair-plugin-vega-preview"
+      }
+    },
+    {
+      "format": "vega-plugin-entry",
+      "formatVersion": 1,
+      "id": "haneoka.altair-webgal",
+      "name": "WebGAL Authoring",
+      "version": "0.1.0",
+      "apiVersion": 2,
+      "description": "Lossless WebGAL import, export and compatibility diagnostics for Altair",
+      "publisher": "Haneoka Gakuen",
+      "tags": ["authoring", "converter", "official", "webgal"],
+      "capabilities": ["assets", "commands", "diagnostics", "format", "services"],
+      "permissions": ["project.read", "project.write"],
+      "dependencies": {
+        "haneoka.altair-adv": "^0.1.0"
+      },
+      "targets": {
+        "runtimes": ["altair"],
+        "platforms": ["android", "electron", "ios", "pwa", "tauri", "web"],
+        "apiVersions": [2]
+      },
+      "source": {
+        "type": "registry",
+        "package": "@haneoka/altair-plugin-webgal"
+      }
+    },
+    {
+      "format": "vega-plugin-entry",
+      "formatVersion": 1,
+      "id": "haneoka.altair-workspace-browser",
+      "name": "Browser Workspace",
+      "version": "0.1.0",
+      "apiVersion": 2,
+      "description": "Folder, file, write, asset URL and refresh services",
+      "publisher": "Haneoka Gakuen",
+      "tags": ["authoring", "browser", "official", "workspace"],
+      "capabilities": ["assets", "services"],
+      "permissions": ["filesystem:read", "filesystem:write"],
+      "targets": {
+        "runtimes": ["altair"],
+        "platforms": ["android", "electron", "ios", "pwa", "tauri", "web"],
+        "apiVersions": [2]
+      },
+      "source": {
+        "type": "registry",
+        "package": "@haneoka/altair-plugin-workspace-browser"
+      }
+    },
+    {
+      "format": "vega-plugin-entry",
+      "formatVersion": 1,
+      "id": "haneoka.cubism",
+      "name": "Cubism Character",
+      "version": "0.1.0",
+      "apiVersion": 1,
+      "description": "Generic Cubism 2/3/4/5 runtime, renderer adapter and AIUEO viseme provider; Core binaries are host-provisioned",
+      "publisher": "Haneoka Gakuen",
+      "tags": ["character", "cubism", "live2d", "official"],
+      "capabilities": ["character"],
+      "permissions": ["audio:analysis", "render:webgl"],
+      "externalRuntimes": [
+        {
+          "id": "live2d.cubism-core",
+          "name": "Live2D Cubism Core",
+          "version": "*",
+          "license": "LicenseRef-Live2D-Cubism-SDK",
+          "homepage": "https://www.live2d.com/en/sdk/license/",
+          "provisioning": ["application-bundle", "host"]
+        },
+        {
+          "id": "live2d.cubism-motion-sync-core",
+          "name": "Live2D Cubism MotionSync Core",
+          "version": "*",
+          "license": "LicenseRef-Live2D-Cubism-SDK",
+          "homepage": "https://www.live2d.com/en/sdk/license/",
+          "provisioning": ["application-bundle", "host"]
+        },
+        {
+          "id": "live2d.cubism2-web-runtime",
+          "name": "Live2D Cubism 2 Web Runtime",
+          "version": "*",
+          "license": "LicenseRef-Live2D-Cubism-SDK",
+          "homepage": "https://www.live2d.com/en/sdk/license/",
+          "provisioning": ["application-bundle", "host"]
+        }
+      ],
+      "targets": {
+        "runtimes": ["vega"],
+        "platforms": ["android", "electron", "ios", "pwa", "tauri", "web"],
+        "engineVersion": "^0.1.0",
+        "apiVersions": [1]
+      },
+      "source": {
+        "type": "registry",
+        "package": "@haneoka/vega-plugin-cubism"
+      }
+    },
+    {
+      "format": "vega-plugin-entry",
+      "formatVersion": 1,
+      "id": "haneoka.host",
+      "name": "Haneoka Host Bridge",
+      "version": "0.1.0",
+      "apiVersion": 1,
+      "description": "Public host resource, storage, localization and input bridge",
+      "publisher": "Haneoka Gakuen",
+      "tags": ["host", "integration", "official"],
+      "capabilities": ["input", "resource", "storage"],
+      "permissions": ["host:input", "host:resource", "host:storage"],
+      "targets": {
+        "runtimes": ["vega"],
+        "platforms": ["android", "electron", "ios", "pwa", "tauri", "web"],
+        "engineVersion": "^0.1.0",
+        "apiVersions": [1]
+      },
+      "source": {
+        "type": "registry",
+        "package": "@haneoka/vega-plugin-haneoka"
+      }
+    },
+    {
+      "format": "vega-plugin-entry",
+      "formatVersion": 1,
+      "id": "haneoka.renderer-pixi",
+      "name": "Pixi Renderer",
+      "version": "0.1.0",
+      "apiVersion": 1,
+      "description": "GPU-accelerated PixiJS scene renderer for Vega",
+      "publisher": "Haneoka Gakuen",
+      "tags": ["official", "pixi", "renderer", "webgl"],
+      "capabilities": ["render"],
+      "permissions": ["render:webgl"],
+      "targets": {
+        "runtimes": ["vega"],
+        "platforms": ["android", "electron", "ios", "pwa", "tauri", "web"],
+        "engineVersion": "^0.1.0",
+        "apiVersions": [1]
+      },
+      "source": {
+        "type": "registry",
+        "package": "@haneoka/vega-renderer-pixi"
+      }
+    },
+    {
+      "format": "vega-plugin-entry",
+      "formatVersion": 1,
+      "id": "haneoka.renderer-three",
+      "name": "Three Renderer",
+      "version": "0.1.0",
+      "apiVersion": 1,
+      "description": "Three.js WebGL2 scene renderer and high-fidelity ADV post-processing backend",
+      "publisher": "Haneoka Gakuen",
+      "tags": ["official", "renderer", "three", "webgl"],
+      "capabilities": ["render"],
+      "permissions": ["render:webgl"],
+      "targets": {
+        "runtimes": ["vega"],
+        "platforms": ["android", "electron", "ios", "pwa", "tauri", "web"],
+        "engineVersion": "^0.1.0",
+        "apiVersions": [1]
+      },
+      "source": {
+        "type": "registry",
+        "package": "@haneoka/vega-renderer-three"
+      }
+    },
+    {
+      "format": "vega-plugin-entry",
+      "formatVersion": 1,
+      "id": "haneoka.spine",
+      "name": "Spine Character",
+      "version": "0.1.0",
+      "apiVersion": 1,
+      "description": "Code-only Spine character runtime adapter",
+      "publisher": "Haneoka Gakuen",
+      "tags": ["character", "official", "spine"],
+      "capabilities": ["character"],
+      "permissions": ["render:webgl"],
+      "externalRuntimes": [
+        {
+          "id": "esotericsoftware.spine-runtime",
+          "name": "Spine Runtime",
+          "version": "*",
+          "license": "LicenseRef-Spine-Runtimes",
+          "homepage": "https://esotericsoftware.com/spine-runtimes-license",
+          "provisioning": ["application-bundle", "host"]
+        }
+      ],
+      "targets": {
+        "runtimes": ["vega"],
+        "platforms": ["android", "electron", "ios", "pwa", "tauri", "web"],
+        "engineVersion": "^0.1.0",
+        "apiVersions": [1]
+      },
+      "source": {
+        "type": "registry",
+        "package": "@haneoka/vega-plugin-spine"
+      }
+    },
+    {
+      "format": "vega-plugin-entry",
+      "formatVersion": 1,
+      "id": "haneoka.theme",
+      "name": "Haneoka Theme",
+      "version": "0.1.0",
+      "apiVersion": 1,
+      "description": "Asset-free original-style game presentation, shell skin, and controls",
+      "publisher": "Haneoka Gakuen",
+      "tags": ["official", "theme", "ui"],
+      "capabilities": ["theme", "ui-slot"],
+      "permissions": ["ui:dom"],
+      "dependencies": {
+        "haneoka.vega-richtext": "^0.1.0",
+        "haneoka.vega-portable-ui": "^0.1.0",
+        "haneoka.vega-shell-default": "^0.1.0"
+      },
+      "targets": {
+        "runtimes": ["vega"],
+        "platforms": ["android", "electron", "ios", "pwa", "tauri", "web"],
+        "engineVersion": "^0.1.0",
+        "apiVersions": [1]
+      },
+      "source": {
+        "type": "registry",
+        "package": "@haneoka/vega-theme-haneoka"
+      }
+    },
+    {
+      "format": "vega-plugin-entry",
+      "formatVersion": 1,
+      "id": "haneoka.vega-ending",
+      "name": "Vega Ending",
+      "version": "0.1.0",
+      "apiVersion": 1,
+      "description": "Configurable completion screen with replay and title actions",
+      "publisher": "Haneoka Gakuen",
+      "tags": ["ending", "official", "ui"],
+      "capabilities": ["ui-slot"],
+      "permissions": ["ui:dom"],
+      "targets": {
+        "runtimes": ["vega"],
+        "platforms": ["android", "electron", "ios", "pwa", "tauri", "web"],
+        "engineVersion": "^0.1.0",
+        "apiVersions": [1]
+      },
+      "source": {
+        "type": "registry",
+        "package": "@haneoka/vega-plugin-ending"
+      }
+    },
+    {
+      "format": "vega-plugin-entry",
+      "formatVersion": 1,
+      "id": "haneoka.vega-portable-ui",
+      "name": "Portable UI",
+      "version": "0.1.0",
+      "apiVersion": 1,
+      "description": "Asset-free dialogue, choice, chat and status UI",
+      "publisher": "Haneoka Gakuen",
+      "tags": ["official", "portable", "ui"],
+      "capabilities": ["theme", "ui-slot"],
+      "permissions": ["ui:dom"],
+      "dependencies": {
+        "haneoka.vega-richtext": "^0.1.0"
+      },
+      "targets": {
+        "runtimes": ["vega"],
+        "platforms": ["android", "electron", "ios", "pwa", "tauri", "web"],
+        "engineVersion": "^0.1.0",
+        "apiVersions": [1]
+      },
+      "source": {
+        "type": "registry",
+        "package": "@haneoka/vega-ui-portable"
+      }
+    },
+    {
+      "format": "vega-plugin-entry",
+      "formatVersion": 1,
+      "id": "haneoka.vega-richtext-bbcode",
+      "name": "Vega Rich Text — BBCode",
+      "version": "0.1.0",
+      "apiVersion": 1,
+      "description": "Tolerant BBCode renderer with strictly sanitized output",
+      "publisher": "Haneoka Gakuen",
+      "tags": ["bbcode", "official", "rich-text"],
+      "capabilities": ["rich-text"],
+      "permissions": ["ui:dom"],
+      "dependencies": {
+        "haneoka.vega-richtext": "^0.1.0"
+      },
+      "targets": {
+        "runtimes": ["vega"],
+        "platforms": ["android", "electron", "ios", "pwa", "tauri", "web"],
+        "engineVersion": "^0.1.0",
+        "apiVersions": [1]
+      },
+      "source": {
+        "type": "registry",
+        "package": "@haneoka/vega-plugin-richtext-bbcode"
+      }
+    },
+    {
+      "format": "vega-plugin-entry",
+      "formatVersion": 1,
+      "id": "haneoka.vega-richtext-html",
+      "name": "Vega Rich Text — HTML",
+      "version": "0.1.0",
+      "apiVersion": 1,
+      "description": "Strictly sanitized HTML renderer",
+      "publisher": "Haneoka Gakuen",
+      "tags": ["html", "official", "rich-text"],
+      "capabilities": ["rich-text"],
+      "permissions": ["ui:dom"],
+      "dependencies": {
+        "haneoka.vega-richtext": "^0.1.0"
+      },
+      "targets": {
+        "runtimes": ["vega"],
+        "platforms": ["android", "electron", "ios", "pwa", "tauri", "web"],
+        "engineVersion": "^0.1.0",
+        "apiVersions": [1]
+      },
+      "source": {
+        "type": "registry",
+        "package": "@haneoka/vega-plugin-richtext-html"
+      }
+    },
+    {
+      "format": "vega-plugin-entry",
+      "formatVersion": 1,
+      "id": "haneoka.vega-richtext-latex",
+      "name": "Vega Rich Text — LaTeX",
+      "version": "0.1.0",
+      "apiVersion": 1,
+      "description": "Safe KaTeX-to-MathML renderer",
+      "publisher": "Haneoka Gakuen",
+      "tags": ["latex", "math", "official", "rich-text"],
+      "capabilities": ["rich-text"],
+      "permissions": ["ui:dom"],
+      "dependencies": {
+        "haneoka.vega-richtext": "^0.1.0"
+      },
+      "targets": {
+        "runtimes": ["vega"],
+        "platforms": ["android", "electron", "ios", "pwa", "tauri", "web"],
+        "engineVersion": "^0.1.0",
+        "apiVersions": [1]
+      },
+      "source": {
+        "type": "registry",
+        "package": "@haneoka/vega-plugin-richtext-latex"
+      }
+    },
+    {
+      "format": "vega-plugin-entry",
+      "formatVersion": 1,
+      "id": "haneoka.vega-richtext-markdown",
+      "name": "Vega Rich Text — Markdown",
+      "version": "0.1.0",
+      "apiVersion": 1,
+      "description": "Markdown renderer with mandatory sanitized output",
+      "publisher": "Haneoka Gakuen",
+      "tags": ["markdown", "official", "rich-text"],
+      "capabilities": ["rich-text"],
+      "permissions": ["ui:dom"],
+      "dependencies": {
+        "haneoka.vega-richtext": "^0.1.0"
+      },
+      "targets": {
+        "runtimes": ["vega"],
+        "platforms": ["android", "electron", "ios", "pwa", "tauri", "web"],
+        "engineVersion": "^0.1.0",
+        "apiVersions": [1]
+      },
+      "source": {
+        "type": "registry",
+        "package": "@haneoka/vega-plugin-richtext-markdown"
+      }
+    },
+    {
+      "format": "vega-plugin-entry",
+      "formatVersion": 1,
+      "id": "haneoka.vega-richtext-typst",
+      "name": "Vega Rich Text — Typst",
+      "version": "0.1.0",
+      "apiVersion": 1,
+      "description": "Lazy Typst-to-SVG renderer with sanitized output",
+      "publisher": "Haneoka Gakuen",
+      "tags": ["official", "rich-text", "typst"],
+      "capabilities": ["rich-text"],
+      "permissions": ["ui:dom", "wasm:execute"],
+      "dependencies": {
+        "haneoka.vega-richtext": "^0.1.0"
+      },
+      "targets": {
+        "runtimes": ["vega"],
+        "platforms": ["android", "electron", "ios", "pwa", "tauri", "web"],
+        "engineVersion": "^0.1.0",
+        "apiVersions": [1]
+      },
+      "source": {
+        "type": "registry",
+        "package": "@haneoka/vega-plugin-richtext-typst"
+      }
+    },
+    {
+      "format": "vega-plugin-entry",
+      "formatVersion": 1,
+      "id": "haneoka.vega-richtext",
+      "name": "Vega Rich Text",
+      "version": "0.1.0",
+      "apiVersion": 1,
+      "description": "Format-neutral rich-text lifecycle and safe ADV/plain renderers",
+      "publisher": "Haneoka Gakuen",
+      "tags": ["official", "rich-text", "ui"],
+      "capabilities": ["rich-text"],
+      "permissions": ["ui:dom"],
+      "targets": {
+        "runtimes": ["vega"],
+        "platforms": ["android", "electron", "ios", "pwa", "tauri", "web"],
+        "engineVersion": "^0.1.0",
+        "apiVersions": [1]
+      },
+      "source": {
+        "type": "registry",
+        "package": "@haneoka/vega-plugin-richtext"
+      }
+    },
+    {
+      "format": "vega-plugin-entry",
+      "formatVersion": 1,
+      "id": "haneoka.vega-shell-default",
+      "name": "Default Shell",
+      "version": "0.1.0",
+      "apiVersion": 1,
+      "description": "Full default player shell, menus, saves, backlog and controls",
+      "publisher": "Haneoka Gakuen",
+      "tags": ["official", "shell", "ui"],
+      "capabilities": ["theme", "ui-slot"],
+      "permissions": ["ui:dom"],
+      "targets": {
+        "runtimes": ["vega"],
+        "platforms": ["android", "electron", "ios", "pwa", "tauri", "web"],
+        "engineVersion": "^0.1.0",
+        "apiVersions": [1]
+      },
+      "source": {
+        "type": "registry",
+        "package": "@haneoka/vega-shell-default"
+      }
+    },
+    {
+      "format": "vega-plugin-entry",
+      "formatVersion": 1,
+      "id": "haneoka.webgal-runtime",
+      "name": "WebGAL Runtime",
+      "version": "0.1.0",
+      "apiVersion": 1,
+      "description": "WebGAL-compatible Pixi stage, performs and familiar game theme",
+      "publisher": "Haneoka Gakuen",
+      "tags": ["compatibility", "official", "pixi", "webgal"],
+      "capabilities": ["commands", "render", "theme"],
+      "permissions": ["render:webgl"],
+      "targets": {
+        "runtimes": ["vega"],
+        "platforms": ["android", "electron", "ios", "pwa", "tauri", "web"],
+        "engineVersion": "^0.1.0",
+        "apiVersions": [1]
+      },
+      "source": {
+        "type": "registry",
+        "package": "@haneoka/vega-plugin-webgal"
+      }
+    }
+  ]
+}
