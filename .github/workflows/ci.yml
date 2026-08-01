@@ -40,7 +40,7 @@ jobs:
 
       - name: Install dependencies
         working-directory: vega-marketplace
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --no-frozen-lockfile
 
       - name: Build protocol and Vega
         working-directory: vega-marketplace
