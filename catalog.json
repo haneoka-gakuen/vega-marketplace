@@ -80,7 +80,7 @@
       "description": "Canonical control-flow analysis for Altair projects",
       "publisher": "Haneoka Gakuen",
       "tags": ["authoring", "flow", "official"],
-      "capabilities": ["flow"],
+      "capabilities": ["flow", "panel"],
       "targets": {
         "runtimes": ["altair"],
         "platforms": ["android", "electron", "ios", "pwa", "tauri", "web"],
@@ -162,6 +162,31 @@
     {
       "format": "vega-plugin-entry",
       "formatVersion": 1,
+      "id": "haneoka.altair-models",
+      "name": "Model tools",
+      "version": "0.1.0",
+      "apiVersion": 2,
+      "description": "Layer editing, model parameters and composed model documents",
+      "publisher": "Haneoka Gakuen",
+      "tags": ["authoring", "models", "official"],
+      "capabilities": ["editor", "panel"],
+      "targets": {
+        "runtimes": ["altair"],
+        "platforms": ["android", "electron", "ios", "pwa", "tauri", "web"],
+        "apiVersions": [2]
+      },
+      "source": {
+        "type": "registry",
+        "package": "@haneoka/altair-plugin-models"
+      },
+      "permissions": ["project.read", "project.write"],
+      "dependencies": {
+        "haneoka.altair-adv": "^0.1.0"
+      }
+    },
+    {
+      "format": "vega-plugin-entry",
+      "formatVersion": 1,
       "id": "haneoka.altair-prose",
       "name": "Prose Adaptation",
       "version": "0.1.0",
@@ -214,7 +239,7 @@
       "description": "Lossless WebGAL import, export and compatibility diagnostics for Altair",
       "publisher": "Haneoka Gakuen",
       "tags": ["authoring", "converter", "official", "webgal"],
-      "capabilities": ["assets", "commands", "diagnostics", "format", "services"],
+      "capabilities": ["assets", "commands", "diagnostics", "format", "services", "editor", "panel"],
       "permissions": ["project.read", "project.write"],
       "dependencies": {
         "haneoka.altair-adv": "^0.1.0"
@@ -249,6 +274,29 @@
       "source": {
         "type": "registry",
         "package": "@haneoka/altair-plugin-workspace-browser"
+      }
+    },
+    {
+      "format": "vega-plugin-entry",
+      "formatVersion": 1,
+      "id": "haneoka.composite",
+      "name": "Composed Models",
+      "version": "0.1.0",
+      "apiVersion": 1,
+      "description": "Layered models, animated media and editable YAML compositions",
+      "publisher": "Haneoka Gakuen",
+      "tags": ["character", "media", "composition", "official"],
+      "capabilities": ["character"],
+      "permissions": ["render:webgl"],
+      "targets": {
+        "runtimes": ["vega"],
+        "platforms": ["android", "electron", "ios", "pwa", "tauri", "web"],
+        "engineVersion": "^0.1.0",
+        "apiVersions": [1]
+      },
+      "source": {
+        "type": "registry",
+        "package": "@haneoka/vega-plugin-composite"
       }
     },
     {
@@ -665,8 +713,8 @@
       "description": "WebGAL-compatible Pixi stage, performs and familiar game theme",
       "publisher": "Haneoka Gakuen",
       "tags": ["compatibility", "official", "pixi", "webgal"],
-      "capabilities": ["commands", "render", "theme"],
-      "permissions": ["render:webgl"],
+      "capabilities": ["commands", "effect", "render", "theme", "ui-slot"],
+      "permissions": ["render:webgl", "ui:dom"],
       "targets": {
         "runtimes": ["vega"],
         "platforms": ["android", "electron", "ios", "pwa", "tauri", "web"],

@@ -21,9 +21,7 @@ for (const entry of catalog.plugins) {
   for (const runtime of entry.externalRuntimes ?? []) {
     const serialized = JSON.stringify(runtime);
     if (/"(?:path|url|artifact|receipt|integrity)"\s*:/u.test(serialized)) {
-      throw new Error(
-        `${entry.id}@${entry.version} external runtime metadata contains an artifact`,
-      );
+      throw new Error(`${entry.id}@${entry.version} external runtime metadata contains an artifact`);
     }
   }
 }
@@ -31,11 +29,7 @@ for (const entry of catalog.plugins) {
 const actual = createHash("sha256").update(bytes).digest("hex");
 const expected = (await readFile(digestUrl, "utf8")).trim().split(/\s+/u)[0];
 if (actual !== expected) {
-  throw new Error(
-    `catalog.sha256 is stale: expected ${expected ?? "<missing>"}, got ${actual}`,
-  );
+  throw new Error(`catalog.sha256 is stale: expected ${expected ?? "<missing>"}, got ${actual}`);
 }
 
-process.stdout.write(
-  `Verified ${catalog.plugins.length} marketplace entries (${actual})\n`,
-);
+process.stdout.write(`Verified ${catalog.plugins.length} marketplace entries (${actual})\n`);
