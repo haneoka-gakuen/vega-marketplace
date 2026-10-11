@@ -73,5 +73,12 @@
       "android",
       "ios"
     ]
-  }
+  },
+  "keywords": [
+    "vega",
+    "altair",
+    "deneb",
+    "plugin-catalog",
+    "visual-novel"
+  ]
 }
