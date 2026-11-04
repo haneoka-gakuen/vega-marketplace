@@ -38,6 +38,8 @@ jobs:
           node-version: 24
           cache: pnpm
           cache-dependency-path: vega-marketplace/pnpm-lock.yaml
+      - name: Set up locked Vega Rust and WASM tools
+        uses: ./vega-marketplace/.dependencies/vega/.github/actions/setup-wasm
 
       - name: Install dependencies
         working-directory: vega-marketplace
