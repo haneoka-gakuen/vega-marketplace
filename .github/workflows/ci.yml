@@ -27,6 +27,7 @@ jobs:
         with:
           repository: haneoka-gakuen/vega
           path: vega-marketplace/.dependencies/vega
+          ref: 2fa1b39c1176852db38a45b453c737e8e3439f5d
 
       - uses: pnpm/action-setup@v6
         with:
