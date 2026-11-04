@@ -374,29 +374,6 @@
     {
       "format": "vega-plugin-entry",
       "formatVersion": 1,
-      "id": "haneoka.renderer-pixi",
-      "name": "Pixi Renderer",
-      "version": "0.1.0",
-      "apiVersion": 1,
-      "description": "GPU-accelerated PixiJS scene renderer for Vega",
-      "publisher": "Haneoka Gakuen",
-      "tags": ["official", "pixi", "renderer", "webgl"],
-      "capabilities": ["render"],
-      "permissions": ["render:webgl"],
-      "targets": {
-        "runtimes": ["vega"],
-        "platforms": ["android", "electron", "ios", "pwa", "tauri", "web"],
-        "engineVersion": "^0.1.0",
-        "apiVersions": [1]
-      },
-      "source": {
-        "type": "registry",
-        "package": "@haneoka/vega-renderer-pixi"
-      }
-    },
-    {
-      "format": "vega-plugin-entry",
-      "formatVersion": 1,
       "id": "haneoka.renderer-three",
       "name": "Three Renderer",
       "version": "0.1.0",
@@ -710,10 +687,10 @@
       "name": "WebGAL Runtime",
       "version": "0.1.0",
       "apiVersion": 1,
-      "description": "WebGAL-compatible Pixi stage, performs and familiar game theme",
+      "description": "WebGAL commands, effects and game theme for the shared Vega stage",
       "publisher": "Haneoka Gakuen",
-      "tags": ["compatibility", "official", "pixi", "webgal"],
-      "capabilities": ["commands", "effect", "render", "theme", "ui-slot"],
+      "tags": ["compatibility", "official", "webgal"],
+      "capabilities": ["commands", "effect", "theme", "ui-slot"],
       "permissions": ["render:webgl", "ui:dom"],
       "targets": {
         "runtimes": ["vega"],
